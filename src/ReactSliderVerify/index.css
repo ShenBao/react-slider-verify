@@ -1,0 +1,53 @@
+.react-slider-verify {
+  display: inline-block;
+  width: 400px;
+  height: 50px;
+  background-color: #ccc;
+  overflow: hidden;
+  position: relative;
+  line-height: 50px;
+  user-select: none;
+}
+
+.react-slider-verify .slider-verify-tips {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+}
+
+.react-slider-verify .slider-verify-bar {
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background: #fff;
+  color: #ccc;
+  cursor: move;
+  z-index: 3;
+  border: 1px solid #ccc;
+}
+
+.react-slider-verify .slider-verify-modal {
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #06ad06;
+  color: #fff;
+}
+
+.react-slider-verify-success .slider-verify-tips {
+  color: #fff;
+}
+
+.react-slider-verify-success .slider-verify-tips::before {
+  display: none;
+}
+
+.react-slider-verify-success .slider-verify-bar {
+  cursor: inherit;
+}

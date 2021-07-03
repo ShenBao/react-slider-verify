@@ -2,13 +2,11 @@
 
 ## React 滑动验证组件
 
-[在线示例](./example/index.tsx)：https://shenbao.github.io/react-slider-verify/dist/index.html
+[在线示例](./example/index.tsx)：[https://shenbao.github.io/react-slider-verify/dist/index.html](https://shenbao.github.io/react-slider-verify/dist/index.html)
 
 ## 截图
 
-![1](./screenshot/01.PNG)
-
-![2](./screenshot/02.PNG)
+![react-slider-verify.PNG](./screenshot/react-slider-verify.PNG)
 
 ## 安装
 
@@ -55,7 +53,7 @@ const ref = useRef({} as any);
 | bgColor    | string      | #F2F3F5                  | 背景颜色         |
 | tips       | ReactComponentLike      | 请按住滑块，拖动到最右边 | 提示文案         |
 | barWidth   | number      | 80                       | 滑块宽度         |
-| bar        | ReactComponentLike | `<span> &gt;&gt;</span>` | 滑块的内容       |
+| bar        | ReactComponentLike | `>>` | 滑块的内容       |
 | successBar | ReactComponentLike | ✅                       | 成功后滑块的内容 |
 | successBgColor | string | #06ad06 | 成功后背景颜色 |
 | successTips | ReactComponentLike | 验证已通过 | 成功文案 |

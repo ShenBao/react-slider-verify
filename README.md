@@ -27,9 +27,8 @@ const ref = useRef({} as any);
 
 <div>
     <ReactSliderVerify
-    ref={ref}
-    tips={"将滑块拖动到最右边"}
-    onSuccess={() => setState(true)}
+        ref={ref}
+        onSuccess={() => setState(true)}
     />
     <div>当前状态：{`${state}`}</div>
     <button
@@ -57,7 +56,7 @@ const ref = useRef({} as any);
 | successBar | ReactComponentLike | ✅                       | 成功后滑块的内容 |
 | successBgColor | string | #06ad06 | 成功后背景颜色 |
 | successTips | ReactComponentLike | 验证已通过 | 成功文案 |
-| successShowBar | bool | true | 成功后的是否显示 Bar |
+| successShowBar | boolean | true | 成功后的是否显示 Bar |
 
 ## 事件
 

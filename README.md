@@ -50,12 +50,12 @@ const ref = useRef({} as any);
 | width      | number      | 400                      | 长度             |
 | height     | number      | 36                       | 宽度             |
 | bgColor    | string      | #F2F3F5                  | 背景颜色         |
-| tips       | ReactComponentLike      | 请按住滑块，拖动到最右边 | 提示文案         |
+| tips       | ReactNode      | 请按住滑块，拖动到最右边 | 提示文案         |
 | barWidth   | number      | 80                       | 滑块宽度         |
-| bar        | ReactComponentLike | `>>` | 滑块的内容       |
-| successBar | ReactComponentLike | ✅                       | 成功后滑块的内容 |
+| bar        | ReactNode | `>>` | 滑块的内容       |
+| successBar | ReactNode | ✅                       | 成功后滑块的内容 |
 | successBgColor | string | #06ad06 | 成功后背景颜色 |
-| successTips | ReactComponentLike | 验证已通过 | 成功文案 |
+| successTips | ReactNode | 验证已通过 | 成功文案 |
 | successShowBar | boolean | true | 成功后的是否显示 Bar |
 
 ## 事件

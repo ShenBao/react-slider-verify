@@ -57,7 +57,7 @@ function ReactSliderVerify(props) {
     backgroundColor: successBgColor,
     // width: `${modalWidth}px`,
     width: "".concat(width, "px"),
-    left: "".concat(-width, "px"),
+    left: "-".concat(width, "px"),
     transitionDuration: !isMove ? ".4s" : "0s",
     transform: "translateX(".concat(modalWidth, "px)")
   };

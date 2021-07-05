@@ -7,6 +7,7 @@ export interface IProps {
   onSuccess?: Function;
   innerRef?: any;
   width?: number;
+  height?: number;
   bgColor?: string;
   tips?: PropTypes.ReactComponentLike;
   barWidth?: number;
@@ -73,14 +74,18 @@ function ReactSliderVerify(props: IProps) {
     backgroundColor: successBgColor,
     // width: `${modalWidth}px`,
     width: `${width}px`,
-    left: `${-width}px`,
+    left: `-${width}px`,
     transitionDuration: !isMove ? ".4s" : "0s",
     transform: `translateX(${modalWidth}px)`,
   };
 
   const verifyTipsStyle = {
     transform: `translateX(${success ? 0 : barWidth}px)`,
-    width: `${success && !successShowBar ? width : width - barWidth}px`,
+    width: `${
+      success && !successShowBar
+        ? width
+        : (width as number) - (barWidth as number)
+    }px`,
   };
 
   return (

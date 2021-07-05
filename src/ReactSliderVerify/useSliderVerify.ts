@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useRef, useEffect } from "react";
 
 interface IOptions {
-  width: number;
-  barWidth: number;
+  width?: number;
+  barWidth?: number;
   onSuccess?: Function;
   innerRef?: any;
 }

@@ -1,6 +1,12 @@
 import React, { useRef, useState } from "react";
 import ReactDOM from "react-dom";
 
+import "@alifd/next/dist/next.css";
+import "antd/dist/antd.css";
+
+import Fusion from "./Fusion";
+import Antd from "./Antd";
+
 import "./index.css";
 import ReactSliderVerify from "../src";
 
@@ -14,8 +20,18 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ padding: 150 }}>
+      <div style={{ padding: "20px", width: "500px", margin: "auto" }}>
         <h1>React Slider Verify</h1>
+        <div style={{marginBottom: 30}}>
+          Github：
+          <a
+            href="https://github.com/ShenBao/react-slider-verify"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://github.com/ShenBao/react-slider-verify
+          </a>
+        </div>
         <div>
           <ReactSliderVerify
             ref={ref}
@@ -77,14 +93,12 @@ function App() {
             重置
           </button>
         </div>
+        <h2 style={{ marginTop: "40px" }}>在 UI 组件库中使用：</h2>
+        <Antd />
+        <Fusion />
       </div>
     </div>
   );
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));

@@ -2,7 +2,9 @@
 
 ## React 滑动验证组件
 
-[在线示例](./example/index.tsx)：[https://shenbao.github.io/react-slider-verify/dist/index.html](https://shenbao.github.io/react-slider-verify/dist/index.html)
+- [在线示例](./example/index.tsx)：[https://shenbao.github.io/react-slider-verify/dist/example](https://shenbao.github.io/react-slider-verify/dist/example)
+- [Antd 示例](./example/Antd.tsx)
+- [Fusion 示例](./example/Fusion.tsx)
 
 ## 截图
 
@@ -50,12 +52,12 @@ const ref = useRef({} as any);
 | width      | number      | 400                      | 长度             |
 | height     | number      | 36                       | 宽度             |
 | bgColor    | string      | #F2F3F5                  | 背景颜色         |
-| tips       | ReactNode      | 请按住滑块，拖动到最右边 | 提示文案         |
+| tips       | ReactChild      | 请按住滑块，拖动到最右边 | 提示文案         |
 | barWidth   | number      | 80                       | 滑块宽度         |
-| bar        | ReactNode | `>>` | 滑块的内容       |
-| successBar | ReactNode | ✅                       | 成功后滑块的内容 |
+| bar        | ReactChild | `>>` | 滑块的内容       |
+| successBar | ReactChild | ✅                       | 成功后滑块的内容 |
 | successBgColor | string | #06ad06 | 成功后背景颜色 |
-| successTips | ReactNode | 验证已通过 | 成功文案 |
+| successTips | ReactChild | 验证已通过 | 成功文案 |
 | successShowBar | boolean | true | 成功后的是否显示 Bar |
 
 ## 事件

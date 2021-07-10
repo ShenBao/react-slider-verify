@@ -1,21 +1,24 @@
-import React, { forwardRef } from "react";
-import PropTypes from "prop-types";
+import React, { forwardRef, Ref } from "react";
 import useSliderVerify from "./useSliderVerify";
 import "./index.css";
 
-export interface IProps {
+interface IProps {
+  onChange?: Function;
   onSuccess?: Function;
-  innerRef?: any;
   width?: number;
   height?: number;
   bgColor?: string;
-  tips?: PropTypes.ReactComponentLike;
+  tips?: React.ReactChild;
   barWidth?: number;
-  bar?: PropTypes.ReactComponentLike;
-  successBar?: PropTypes.ReactComponentLike;
+  bar?: React.ReactChild;
+  successBar?: React.ReactChild;
   successBgColor?: string;
-  successTips?: PropTypes.ReactComponentLike;
-  successShowBar: boolean;
+  successTips?: React.ReactChild;
+  successShowBar?: boolean;
+}
+
+interface IInnerProps extends IProps {
+  innerRef?: any;
 }
 
 const defaultProps = {
@@ -31,8 +34,11 @@ const defaultProps = {
   successShowBar: true,
 };
 
-function ReactSliderVerify(props: IProps) {
+function ReactSliderVerify(props: IInnerProps) {
   const {
+    onChange,
+    onSuccess,
+    innerRef,
     width,
     height,
     bgColor,
@@ -43,15 +49,14 @@ function ReactSliderVerify(props: IProps) {
     bar,
     successBar,
     successShowBar,
-    onSuccess,
-    innerRef,
   } = props;
 
   const { success, isMove, barLeft, modalWidth, refBar } = useSliderVerify({
-    width,
-    barWidth,
+    onChange,
     onSuccess,
     innerRef,
+    width,
+    barWidth,
   });
 
   const sliderVerifyStyle = {
@@ -110,6 +115,6 @@ function ReactSliderVerify(props: IProps) {
 
 ReactSliderVerify.defaultProps = defaultProps;
 
-export default forwardRef((props: any, ref) => (
+export default forwardRef((props: IProps, ref: Ref<any>) => (
   <ReactSliderVerify {...props} innerRef={ref} />
 ));

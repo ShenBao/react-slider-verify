@@ -1,12 +1,11 @@
-import { useImperativeHandle } from "react";
-import { useState } from "react";
-import { useRef, useEffect } from "react";
+import { useState, useEffect, useRef, useImperativeHandle } from "react";
 
 interface IOptions {
-  width?: number;
-  barWidth?: number;
+  onChange?: Function;
   onSuccess?: Function;
   innerRef?: any;
+  width?: number;
+  barWidth?: number;
 }
 
 interface ITmpData {
@@ -17,9 +16,9 @@ interface ITmpData {
 }
 
 export default function useSliderVerify(options: IOptions) {
-  const { width = 320, barWidth = 80, onSuccess, innerRef } = options;
+  const { onChange, onSuccess, innerRef, width = 320, barWidth = 80 } = options;
 
-  const refBar = useRef<any>({});
+  const refBar = useRef<any>();
   const refTmpData = useRef<ITmpData>({
     max: width - barWidth,
     offX: 0,
@@ -49,6 +48,7 @@ export default function useSliderVerify(options: IOptions) {
       refTmpData.current.isMove = false;
 
       setSuccess(true);
+      onChange && onChange(true);
       onSuccess && onSuccess();
 
       // 移除事件

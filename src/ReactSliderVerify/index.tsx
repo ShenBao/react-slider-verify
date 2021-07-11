@@ -3,6 +3,7 @@ import useSliderVerify from "./useSliderVerify";
 import "./index.css";
 
 interface IProps {
+  value?: boolean;
   onChange?: Function;
   onSuccess?: Function;
   width?: number;
@@ -22,6 +23,7 @@ interface IInnerProps extends IProps {
 }
 
 const defaultProps = {
+  value: false,
   width: 400,
   height: 36,
   bgColor: "#F2F3F5",
@@ -36,6 +38,7 @@ const defaultProps = {
 
 function ReactSliderVerify(props: IInnerProps) {
   const {
+    value,
     onChange,
     onSuccess,
     innerRef,
@@ -52,6 +55,7 @@ function ReactSliderVerify(props: IInnerProps) {
   } = props;
 
   const { success, isMove, barLeft, modalWidth, refBar } = useSliderVerify({
+    value,
     onChange,
     onSuccess,
     innerRef,
@@ -77,7 +81,6 @@ function ReactSliderVerify(props: IInnerProps) {
 
   const modalStyle = {
     backgroundColor: successBgColor,
-    // width: `${modalWidth}px`,
     width: `${width}px`,
     left: `-${width}px`,
     transitionDuration: !isMove ? ".4s" : "0s",

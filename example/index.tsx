@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <div style={{ padding: "20px", width: "500px", margin: "auto" }}>
         <h1>React Slider Verify</h1>
-        <div style={{marginBottom: 30}}>
+        <div style={{ marginBottom: 30 }}>
           Github：
           <a
             href="https://github.com/ShenBao/react-slider-verify"

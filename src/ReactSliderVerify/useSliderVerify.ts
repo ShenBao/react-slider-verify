@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useImperativeHandle } from "react";
 
 interface IOptions {
+  value?: boolean;
   onChange?: Function;
   onSuccess?: Function;
   innerRef?: any;
@@ -16,7 +17,14 @@ interface ITmpData {
 }
 
 export default function useSliderVerify(options: IOptions) {
-  const { onChange, onSuccess, innerRef, width = 320, barWidth = 80 } = options;
+  const {
+    value,
+    onChange,
+    onSuccess,
+    innerRef,
+    width = 320,
+    barWidth = 80,
+  } = options;
 
   const refBar = useRef<any>();
   const refTmpData = useRef<ITmpData>({
@@ -30,11 +38,13 @@ export default function useSliderVerify(options: IOptions) {
   const [success, setSuccess] = useState(false);
 
   const onMouseDown = (e: any) => {
+    // if (success) return;
     refTmpData.current.offX = e.pageX;
     document.addEventListener("mousemove", onMove);
   };
 
   const onMove = (e: any) => {
+    // if (success) return;
     const diff = e.pageX - refTmpData.current.offX;
     let barLeft = diff;
     let modalWidth = diff;
@@ -76,13 +86,22 @@ export default function useSliderVerify(options: IOptions) {
   };
 
   useEffect(() => {
+    const left = refBar.current.getBoundingClientRect().left;
+    refTmpData.current.offX = value ? left + width : left;
+    refTmpData.current.diff = value ? width : 0;
+    setBarLeft(value ? width - barWidth : 0);
+    setModalWidth(value ? width : 0);
+    setSuccess(!!value);
+
+    if (value) return;
+
     refBar.current.addEventListener("mousedown", onMouseDown);
     document.addEventListener("mouseup", onMouseUp);
     return () => {
       document.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseup", onMouseUp);
     };
-  }, []);
+  }, [value]);
 
   const reset = () => {
     setSuccess(false);

@@ -1,8 +1,10 @@
 import React from "react";
 import { Form, Input, Button } from "antd";
-import { ReactSliderVerify } from '../src';
+import { ReactSliderVerify } from "../src";
 
 export default function AntdDemo() {
+  const [form] = Form.useForm();
+
   const onFinish = (values: any) => {
     console.log("onFinish:");
     console.log(JSON.stringify(values, null, 4));
@@ -13,6 +15,10 @@ export default function AntdDemo() {
     console.log(JSON.stringify(errorInfo, null, 4));
   };
 
+  const handleReset = () => {
+    form.resetFields();
+  };
+
   return (
     <div style={{ margin: "30px auto" }}>
       <h5>Antd Form：</h5>
@@ -20,9 +26,9 @@ export default function AntdDemo() {
         name="basic"
         labelCol={{ span: 6 }}
         wrapperCol={{ span: 14 }}
-        initialValues={{ remember: true }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
+        form={form}
       >
         <Form.Item
           label="Username"
@@ -42,18 +48,26 @@ export default function AntdDemo() {
         <Form.Item
           label="Slider Verify"
           name="sliderVerify"
-          rules={[{ required: true, message: "Please complete the slide verification!" }]}
+          rules={[
+            {
+              required: true,
+              message: "Please complete the slide verification!",
+            },
+          ]}
         >
-          <ReactSliderVerify
-            width={268}
-            height={32}
-            barWidth={60}
-          />
+          <ReactSliderVerify width={268} height={32} barWidth={60} />
         </Form.Item>
 
         <Form.Item label=" " colon={false}>
           <Button type="primary" htmlType="submit">
             Submit
+          </Button>
+          <Button
+            style={{ marginLeft: 15 }}
+            htmlType="button"
+            onClick={handleReset}
+          >
+            Reset
           </Button>
         </Form.Item>
       </Form>

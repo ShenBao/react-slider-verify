@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Form, Input, Field } from "@alifd/next";
+import { Form, Input, Field, Button } from "@alifd/next";
 
 import ReactSliderVerify from "../src";
 
@@ -28,6 +28,10 @@ export default function FusionDemo() {
     console.log(JSON.stringify(errors, null, 4));
   };
 
+  const handleReset = () => {
+    field.reset();
+  };
+
   return (
     <div style={{ margin: "30px auto" }}>
       <h5>Fusion Form：</h5>
@@ -47,7 +51,7 @@ export default function FusionDemo() {
         </FormItem>
         <FormItem label="Password">
           <Input.Password
-            name="Password"
+            name="password"
             placeholder="Please Enter Password"
             {...init("password", {
               rules: [
@@ -92,6 +96,9 @@ export default function FusionDemo() {
           >
             Submit
           </Form.Submit>
+          <Button style={{ marginLeft: 15 }} onClick={handleReset}>
+            Reset
+          </Button>
         </FormItem>
       </Form>
     </div>

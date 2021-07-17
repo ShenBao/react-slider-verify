@@ -1,0 +1,56 @@
+.react-slider-verify-wrapper {
+  display: inline-block;
+  width: 400px;
+  height: 50px;
+  background-color: #ccc;
+  overflow: hidden;
+  position: relative;
+  line-height: 50px;
+  user-select: none;
+
+  .slider-verify-tips {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .slider-verify-bar {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background: #fff;
+    box-sizing: border-box;
+    color: #ccc;
+    cursor: move;
+    z-index: 3;
+    border: 1px solid #ccc;
+  }
+
+  .slider-verify-modal {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #06ad06;
+    color: #fff;
+  }
+
+  &.react-slider-verify-success {
+    .slider-verify-tips {
+      color: #fff;
+    }
+
+    .slider-verify-tips::before {
+      display: none;
+    }
+
+    .slider-verify-bar {
+      cursor: inherit;
+    }
+  }
+}

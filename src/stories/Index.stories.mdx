@@ -1,0 +1,54 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import reactSliderVerify from "./assets/react-slider-verify.PNG";
+
+<Meta title="Introduction" />
+
+## React 滑动验证组件
+
+React 滑动验证组件
+
+<div style={{ marginBottom: 30 }}>
+  Github：
+  <a
+    href="https://github.com/ShenBao/react-slider-verify"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    https://github.com/ShenBao/react-slider-verify
+  </a>
+</div>
+
+<img src={reactSliderVerify} width={800} alt="reactSliderVerify" />
+
+### 安装
+
+```bash
+yarn add react-slider-verify
+```
+
+### 使用
+
+#### Default
+
+<Canvas>
+  <Story id="reactsliderverify--default" />
+</Canvas>
+
+#### 重置状态
+
+<Canvas>
+  <Story id="reactsliderverify--reset" />
+</Canvas>
+
+
+#### 在 Fusion 中使用
+
+<Canvas>
+  <Story id="reactsliderverify--fusion" />
+</Canvas>
+
+#### 在 Antd 中使用
+
+<Canvas>
+  <Story id="reactsliderverify--antd" />
+</Canvas>

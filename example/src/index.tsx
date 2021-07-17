@@ -1,14 +1,15 @@
 import React, { useRef, useState } from "react";
 import ReactDOM from "react-dom";
 
+import "./index.css";
 import "@alifd/next/dist/next.css";
 import "antd/dist/antd.css";
+import "react-slider-verify/dist/index.css";
 
 import Fusion from "./Fusion";
 import Antd from "./Antd";
 
-import "./index.css";
-import ReactSliderVerify from "../src";
+import ReactSliderVerify from "react-slider-verify";
 
 function App() {
   const ref = useRef({} as any);

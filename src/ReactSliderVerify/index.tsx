@@ -1,6 +1,6 @@
 import React, { forwardRef, Ref } from "react";
 import useSliderVerify from "./useSliderVerify";
-import "./index.css";
+import "./index.scss";
 
 interface IProps {
   value?: boolean;
@@ -36,7 +36,7 @@ const defaultProps = {
   successShowBar: true,
 };
 
-function ReactSliderVerify(props: IInnerProps) {
+function SliderVerify(props: IInnerProps) {
   const {
     value,
     onChange,
@@ -98,11 +98,9 @@ function ReactSliderVerify(props: IInnerProps) {
 
   return (
     <div
-      className={
-        success
-          ? "react-slider-verify react-slider-verify-success"
-          : "react-slider-verify"
-      }
+      className={`react-slider-verify-wrapper ${
+        success ? "react-slider-verify-success" : ""
+      }`}
       style={sliderVerifyStyle}
     >
       <span className="slider-verify-tips" style={verifyTipsStyle}>
@@ -116,8 +114,12 @@ function ReactSliderVerify(props: IInnerProps) {
   );
 }
 
-ReactSliderVerify.defaultProps = defaultProps;
+SliderVerify.defaultProps = defaultProps;
 
-export default forwardRef((props: IProps, ref: Ref<any>) => (
-  <ReactSliderVerify {...props} innerRef={ref} />
+const ReactSliderVerify = forwardRef((props: IProps, ref: Ref<any>) => (
+  <SliderVerify {...props} innerRef={ref} />
 ));
+
+ReactSliderVerify.displayName = "ReactSliderVerify";
+
+export default ReactSliderVerify;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Input, Button } from "antd";
-import { ReactSliderVerify } from "../src";
+import ReactSliderVerify from "react-slider-verify";
 
 export default function AntdDemo() {
   const [form] = Form.useForm();

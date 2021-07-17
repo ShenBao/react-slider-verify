@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "babel-preset-haiyan",
+      {
+        "typescript": true,
+        "react": {
+          "development": true
+        }
+      }
+    ]
+  ]
+}

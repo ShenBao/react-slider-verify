@@ -2,9 +2,7 @@
 
 ## React 滑动验证组件
 
-- [在线示例](./example/index.tsx)：[https://shenbao.github.io/react-slider-verify/dist/example](https://shenbao.github.io/react-slider-verify/dist/example)
-- [Antd 示例](./example/Antd.tsx)
-- [Fusion 示例](./example/Fusion.tsx)
+<!-- https://www.unpkg.com/react-slider-verify@0.1.2/dist/index.html?path=/story/introduction--page -->
 
 ## 截图
 

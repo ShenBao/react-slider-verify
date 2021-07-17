@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Form, Input, Field, Button } from "@alifd/next";
 
-import ReactSliderVerify from "../src";
+import ReactSliderVerify from "react-slider-verify";
 
 const FormItem = Form.Item;
 

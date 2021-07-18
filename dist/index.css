@@ -1,0 +1,45 @@
+.react-slider-verify-wrapper {
+  display: inline-block;
+  width: 400px;
+  height: 50px;
+  background-color: #ccc;
+  overflow: hidden;
+  position: relative;
+  line-height: 50px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .react-slider-verify-wrapper .slider-verify-tips {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    text-align: center; }
+  .react-slider-verify-wrapper .slider-verify-bar {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: #ccc;
+    cursor: move;
+    z-index: 3;
+    border: 1px solid #ccc; }
+  .react-slider-verify-wrapper .slider-verify-modal {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #06ad06;
+    color: #fff; }
+  .react-slider-verify-wrapper.react-slider-verify-success .slider-verify-tips {
+    color: #fff; }
+  .react-slider-verify-wrapper.react-slider-verify-success .slider-verify-tips::before {
+    display: none; }
+  .react-slider-verify-wrapper.react-slider-verify-success .slider-verify-bar {
+    cursor: inherit; }

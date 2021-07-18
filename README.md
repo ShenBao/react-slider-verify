@@ -17,6 +17,9 @@ $ npm install react-slider-verify -S
 ## 使用组件
 
 ```js
+import ReactSliderVerify from "react-slider-verify";
+import "react-slider-verify/dist/index.css";
+
 <ReactSliderVerify onSuccess={() => {}} />
 ```
 
@@ -40,7 +43,6 @@ const ref = useRef({} as any);
     重置
     </button>
 </div>
-
 ```
 
 ## 参数说明

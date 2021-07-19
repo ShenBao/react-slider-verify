@@ -2,7 +2,15 @@
 
 ## React 滑动验证组件
 
-<!-- https://www.unpkg.com/react-slider-verify@0.1.2/dist/index.html?path=/story/introduction--page -->
+<!-- https://www.unpkg.com/react-slider-verify@0.2.1/dist/index.html?path=/story/introduction--page -->
+
+- [Github 地址](https://github.com/ShenBao/react-slider-verify)：
+  - [https://github.com/ShenBao/react-slider-verify](https://github.com/ShenBao/react-slider-verify)
+- [在线示例](./example/src/index.tsx)：
+  - [https://shenbao.github.io/react-slider-verify/dist/index.html](https://shenbao.github.io/react-slider-verify/dist/index.html)
+  - [example](https://shenbao.github.io/react-slider-verify/example/dist/index.html)
+- [Antd 示例](./example/src/Antd.tsx)
+- [Fusion 示例](./example/src/Fusion.tsx)
 
 ## 截图
 
@@ -20,7 +28,7 @@ $ npm install react-slider-verify -S
 import ReactSliderVerify from "react-slider-verify";
 import "react-slider-verify/dist/index.css";
 
-<ReactSliderVerify onSuccess={() => {}} />
+<ReactSliderVerify onSuccess={() => {}} />;
 ```
 
 ## 重置状态方法
